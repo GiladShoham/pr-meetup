@@ -36,9 +36,9 @@
     "ui/gilad-user-card": {
         "scope": "",
         "version": "",
-        "defaultScope": "shohamgilad.design",
+        "defaultScope": "shohamgilad.self",
         "mainFile": "index.ts",
-        "rootDir": "design/ui/gilad-user-card",
+        "rootDir": "self/ui/gilad-user-card",
         "config": {
             "teambit.envs/envs": {
                 "env": "teambit.community/envs/community-react"

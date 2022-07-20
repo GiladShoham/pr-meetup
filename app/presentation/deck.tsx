@@ -26,7 +26,7 @@ import { ExploreSection } from '@shohamgilad/pr-meetup.slides.ecosystem-compatib
 import { Hero } from '@shohamgilad/pr-meetup.slides.what-is-bit';
 import { SupportedFrameworks } from '@shohamgilad/pr-meetup.slides.supported-frameworks';
 
-import { GiladUserCard } from '@shohamgilad/design.ui.gilad-user-card';
+import { GiladUserCard } from '@shohamgilad/self.ui.gilad-user-card';
 
 import Intro from './content/intro.mdx';
 import Methodology from './content/methodology.mdx';
