@@ -1,0 +1,16 @@
+{
+  "extends": "./node_modules/@teambit/react/typescript/tsconfig.json",
+  "include": [
+    "community",
+    "dot-bit",
+    "sales",
+    "slides",
+    "types",
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "compilerOptions": {
+    "noEmit": true
+  }
+}

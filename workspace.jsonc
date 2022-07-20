@@ -1,0 +1,128 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  "shohamgilad.pr-meetup/app/presentation": {},
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    /**
+     * the name of the component workspace. used for development purposes.
+     **/
+    "name": "slides",
+    /**
+     * set the icon to be shown on the Bit server.
+     **/
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    /**
+     * default directory to place a component during `bit import` and `bit create`.
+     * the following placeholders are available:
+     * name - component name includes namespace, e.g. 'ui/button'.
+     * scopeId - full scope-id includes the owner, e.g. 'teambit.compilation'.
+     * scope - scope name only, e.g. 'compilation'.
+     * owner - owner name in bit.dev, e.g. 'teambit'.
+     **/
+    "defaultDirectory": "{scope}/{name}",
+    /**
+     * default scope for all components in workspace.
+     **/
+    "defaultScope": "shohamgilad.pr-meetup"
+  },
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@teambit/base-react.navigation.link": "2.0.27",
+        "@teambit/base-ui.elements.separator": "1.1.0",
+        "@teambit/base-ui.layout.page-frame": "1.0.2",
+        "@teambit/blog.starter.starter-blog": "0.0.64",
+        "@teambit/cloud.cloud-provider": "0.0.43",
+        "@teambit/community.entity.compnent-distribution-graph": "1.95.26",
+        "@teambit/community.entity.features": "1.95.6",
+        "@teambit/community.entity.graph.bubble-graph": "1.95.12",
+        "@teambit/community.ui.bubble-highlighter": "1.96.3",
+        "@teambit/community.ui.features.features-section": "1.96.4",
+        "@teambit/community.ui.graph.bubble-graph": "1.96.3",
+        "@teambit/community.ui.graph.component-bubble": "1.96.3",
+        "@teambit/community.ui.graph.create-row": "1.96.3",
+        "@teambit/community.ui.heading": "1.96.3",
+        "@teambit/community.ui.plugins.plugin-group": "1.6.43",
+        "@teambit/community.ui.sections.component-distribution": "1.96.3",
+        "@teambit/component-id": "0.0.402",
+        "@teambit/components.blocks.component-card-display": "0.0.24",
+        "@teambit/design.elements.icon": "1.0.17",
+        "@teambit/design.embeds.figma": "0.0.17",
+        "@teambit/design.responsive.breakpoints": "0.0.11",
+        "@teambit/design.themes.theme-toggler": "0.1.3",
+        "@teambit/design.ui.buttons.button": "1.96.3",
+        "@teambit/design.ui.content.subtitle": "1.96.3",
+        "@teambit/design.ui.navigation.link": "1.96.9",
+        "@teambit/documenter.ui.copy-box": "4.1.6",
+        "@teambit/explorer.ui.gallery.component-card": "0.0.496",
+        "@teambit/explorer.ui.gallery.component-card-group": "1.96.1",
+        "@teambit/explorer.ui.search.search-input": "1.95.6",
+        "@teambit/people.plugins.social-links": "0.0.5",
+        "@teambit/people.plugins.user-info": "0.0.11",
+        "@teambit/people.ui.social-links": "0.0.6",
+        "@teambit/people.ui.user-info": "0.0.7",
+        "@teambit/people.user-card": "0.0.11",
+        "@teambit/react.ui.component-highlighter": "0.2.0",
+        "@teambit/slides.entities.slide": "0.1.6",
+        "@teambit/slides.layouts.component-grid": "0.0.2",
+        "@teambit/slides.layouts.component-showcase": "0.0.2",
+        "@teambit/slides.layouts.title": "0.1.10",
+        "@teambit/slides.layouts.title-and-text": "0.0.2",
+        "@teambit/slides.slides": "0.1.25",
+        "@teambit/slides.templates.blank": "0.0.3",
+        "@teambit/slides.templates.deck-opening": "0.0.2",
+        "@teambit/slides.templates.section-opening": "0.0.2",
+        "@teambit/ui-foundation.ui.navigation.react-router-adapter": "6.1.1",
+        "@typescript-eslint/eslint-plugin": "5.21.0",
+        "classnames": "2.3.1",
+        "eslint-import-resolver-node": "0.3.6",
+        "eslint-plugin-import": "2.22.1",
+        "eslint-plugin-jest": "24.4.0",
+        "eslint-plugin-jsx-a11y": "6.4.1",
+        "eslint-plugin-mdx": "1.15.0",
+        "eslint-plugin-react": "7.25.1",
+        "express": "4.18.1",
+        "lodash.compact": "3.0.1",
+        "prop-types": "15.8.1",
+        "react-hotkeys-hook": "3.4.4",
+        "react-xarrows": "2.0.2"
+      },
+      "peerDependencies": {
+        "@apollo/client": "3.3.7",
+        "@testing-library/react": "12.0.0",
+        "graphql": "14.7.0",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-router-dom": "6.2.1",
+        "subscriptions-transport-ws": "0.11.0"
+      }
+    }
+  },
+  /**
+   * workspace variants allow to set different subsets of configuration for components in your
+   * workspace. this is extremely useful for upgrading, aligning and building components with a new
+   * set of dependencies. a rule can be a directory or a component-id/namespace, in which case,
+   * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
+   * see https://harmony-docs.bit.dev/aspects/variants for more info.
+   **/
+  "teambit.workspace/variants": {
+    "app": {
+      "teambit.harmony/aspect": {}
+    },
+    "slides": {
+      "teambit.community/envs/community-react@2.1.3": {}
+    }
+  }
+}

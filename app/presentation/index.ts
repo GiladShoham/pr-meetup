@@ -1,0 +1,1 @@
+export { BitByBitDeckApp } from './app';

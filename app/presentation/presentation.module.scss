@@ -1,0 +1,15 @@
+.grid {
+    overflow: hidden; // prevent expanding bubbles from extending past the screen
+    display: grid;
+    grid-gap: 100px;
+    margin: 40px 0 auto;
+    padding: 0 20px;
+  }
+  
+  .imageStripSection {
+    margin: 140px 0;
+    overflow: hidden;
+    .imgStrip {
+      padding: 20px 0;
+    }
+  }

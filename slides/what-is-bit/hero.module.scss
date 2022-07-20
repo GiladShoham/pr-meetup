@@ -1,0 +1,127 @@
+@use '~@teambit/design.responsive.breakpoints/_breakpoints.module.scss';
+
+.hero {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 0.4fr);
+  align-items: center;
+  grid-gap: 24px;
+  align-items: center;
+  justify-items: center;
+}
+
+.heroGraph {
+  @include breakpoints.media-lg {
+    grid-template-rows: repeat(5, 0.4fr);
+  }
+  @include breakpoints.media-md {
+    grid-template-rows: repeat(4, 0.4fr);
+  }
+}
+
+.bubble {
+  position: absolute;
+  background-color: white;
+  &:hover {
+    z-index: 1;
+  }
+}
+
+.bubbleContainer {
+  position: relative;
+}
+
+.title {
+  grid-column-start: 4;
+  grid-column-end: 10;
+  grid-row-start: 3;
+  @include breakpoints.media-lg {
+    grid-row-start: 2;
+  }
+  text-align: center;
+
+  .largeSvg {
+    top: 14px;
+    left: 14px;
+  }
+}
+
+.marginZero {
+  margin: 0;
+}
+
+.heading {
+  margin: 10px;
+}
+
+.titleHighlighter {
+  border-radius: 80px;
+}
+
+.subTitle {
+  grid-column-start: 4;
+  grid-column-end: 10;
+  grid-row-start: 4;
+  text-align: center;
+  margin-bottom: 0;
+  .subtitleSvg {
+    top: 10px;
+    left: 10px;
+  }
+  @include breakpoints.media-lg {
+    grid-row-start: 3;
+  }
+  @include breakpoints.media-md {
+    grid-column-start: 3;
+    grid-column-end: 11;
+  }
+  @include breakpoints.media-sm {
+    grid-column-start: 1;
+    grid-column-end: 13;
+  }
+}
+
+.subtitleHighlighter {
+  border-radius: 45px;
+  padding: 20px;
+}
+
+.getStarted {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-column-start: 4;
+  grid-column-end: 10;
+  grid-row-start: 5;
+  text-align: center;
+  > div {
+    margin-bottom: 24px;
+  }
+  > div:first-child {
+    margin-right: 8px;
+  }
+  @include breakpoints.media-lg {
+    grid-row-start: 4;
+  }
+}
+
+.graphStart {
+  grid-column-start: 12;
+  grid-row-start: 3;
+  position: relative;
+}
+
+.copyBox {
+  // @hack - override system tokens
+  --bit-bg-dent: #0a1821;
+  --bit-accent-color: currentColor;
+  --bit-text-on-accent: #2b2b2b;
+  color: #ededed;
+  width: 20em;
+  height: 48px;
+}
+
+.getStartedAction {
+  width: 280px;
+}

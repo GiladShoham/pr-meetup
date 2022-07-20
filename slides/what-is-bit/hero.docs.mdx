@@ -1,0 +1,22 @@
+---
+description: 'A Hero component'
+labels: ['hero', 'ui', 'graph']
+---
+
+import { FigmaEmbed } from '@teambit/design.embeds.figma';
+import { mockBubbleGraph } from '@teambit/community.entity.graph.bubble-graph';
+import { Hero } from './hero';
+
+A hero component showcasing components and their dependencies.
+
+### Hero with title and teaser
+
+Pass the `title`, `teaser` and [`bubble graph`](https://bit.dev/teambit/community/entity/graph/bubble-graph) props to have them rendered by the Hero component.
+
+```js live
+<Hero
+  title="Build anything in components"
+  teaser="Forget about monolithic apps, start building component-driven software. Bit helps developers build better software with independent components and compose them into infinite features and apps."
+  bubbles={mockBubbleGraph()}
+/>
+```

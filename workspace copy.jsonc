@@ -1,0 +1,86 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    /**
+     * the name of the component workspace. used for development purposes.
+     **/
+    "name": "slides",
+    /**
+     * set the icon to be shown on the Bit server.
+     **/
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    /**
+     * default directory to place a component during `bit import` and `bit create`.
+     * the following placeholders are available:
+     * name - component name includes namespace, e.g. 'ui/button'.
+     * scopeId - full scope-id includes the owner, e.g. 'teambit.compilation'.
+     * scope - scope name only, e.g. 'compilation'.
+     * owner - owner name in bit.dev, e.g. 'teambit'.
+     **/
+    "defaultDirectory": "{scope}/{name}",
+    /**
+     * default scope for all components in workspace.
+     **/
+    "defaultScope": "teambit.dot-bit"
+  },
+  "teambit.meetups/component-entities/deck": {},
+  // "teambit.meetups/component-entities/user-service": {},
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@teambit/base-react.navigation.link": "2.0.27",
+        "@teambit/design.themes.theme-toggler": "0.1.3",
+        "@teambit/explorer.ui.gallery.component-card": "0.0.496",
+        "@teambit/explorer.ui.gallery.component-card-group": "1.96.1",
+        "@teambit/slides.entities.slide": "0.1.6",
+        "@teambit/slides.slides": "0.1.24",
+        "@teambit/slides.templates.blank": "0.0.3",
+        "@teambit/slides.templates.deck-opening": "0.0.2",
+        "@teambit/slides.templates.section-opening": "0.0.2",
+        "@teambit/ui-foundation.ui.navigation.react-router-adapter": "6.1.1",
+        "@typescript-eslint/eslint-plugin": "5.21.0",
+        "classnames": "2.3.1",
+        "eslint-import-resolver-node": "0.3.6",
+        "eslint-plugin-import": "2.22.1",
+        "eslint-plugin-jest": "24.4.0",
+        "eslint-plugin-jsx-a11y": "6.4.1",
+        "eslint-plugin-mdx": "1.15.0",
+        "eslint-plugin-react": "7.25.1",
+        "express": "4.18.1",
+        "lodash.compact": "3.0.1",
+        "prop-types": "15.8.1",
+        "react-hotkeys-hook": "3.4.4"
+      },
+      "peerDependencies": {
+        "@apollo/client": "3.3.7",
+        "@testing-library/react": "12.0.0",
+        "graphql": "14.7.0",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-router-dom": "6.2.1",
+        "subscriptions-transport-ws": "0.11.0"
+      }
+    }
+  },
+  /**
+   * workspace variants allow to set different subsets of configuration for components in your
+   * workspace. this is extremely useful for upgrading, aligning and building components with a new
+   * set of dependencies. a rule can be a directory or a component-id/namespace, in which case,
+   * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
+   * see https://harmony-docs.bit.dev/aspects/variants for more info.
+   **/
+  "teambit.workspace/variants": {}
+}
